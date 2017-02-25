@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.col-sm-6{
+    margin-right: 0px !important;
+    padding-right: 20px !important;
+}
+
+.col-sm-6 li{
+    list-style: none;
+    display: inline-block;
+    padding-right: 3px;
+}
+
+/*TIMELINE & TL HEADER**************/
+.col-sm-4{
+    padding-left: 370px;
+    margin: 0 auto;
+}
+
+.container {
+  margin-left: -370px;
+  white-space: nowrap;
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul {
+  padding: 5px 0;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 25px;
+  background: #CDD6DD;
+  /*color of line*/
+}
+
+.timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+  /*size of circles*/
+}
+
+.timeline ul li div {
+  position: relative;
+  height: 80px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  bottom: 0;
+  width: 395px; /*was 350*/
+  left: -395px;
+  padding: 15px;
+  background: #CCFBFE;
+  /*bg of nodes on timeline*/
+  }
+
+.timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ul li div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #FCBD85;
+  /*color of triangles*/
+}
+
+time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* EFFECTS
+max-height: 1000px;
+transition: all 1s; timeline ul li in-view after
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.timeline ul li::after {
+  transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: #FCBD85;
+}
+
+.timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
