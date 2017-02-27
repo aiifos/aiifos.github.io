@@ -98,7 +98,6 @@ time {
 }
 
 /* EFFECTS
-max-height: 1000px;
 transition: all 1s; timeline ul li in-view after
 ––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
@@ -121,4 +120,21 @@ transition: all 1s; timeline ul li in-view after
   transform: none;
   visibility: visible;
   opacity: 1;
+}
+
+/*******adjustments for smaller screens**********/
+@media (max-width: 400px){
+
+    .timeline ul li div {
+      position: relative;
+      height: 80px;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      bottom: 0;
+      width: 350px; /*was 350*/
+      left: -350px;
+      padding: 5px;
+      background: #CCFBFE;
+      /*bg of nodes on timeline*/
+      }
 }
